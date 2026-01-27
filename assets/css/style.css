@@ -27,13 +27,29 @@ header {
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.5);
   z-index: 500;
 }
+body {
+  height: 100%;
+  overflow-x: hidden;
+}
 a {
   text-decoration: none;
 }
 a:hover {
   color: var(--color-blue-main);
 }
-
+aside {
+  display: flex;
+  min-height: calc(100vh - 80px);
+  background-color: #133a66;
+  position: fixed;
+  padding: 0px 36px;
+  top: 80px;
+  width: 100%;
+  transform: translateX(100%);
+  transition: transform 0.4s ease;
+  box-shadow: -5px 0px 20px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 40px 0 0 40px;
+}
 h2 {
   font-size: 48px;
   color: var(--color-font-h2);
@@ -46,11 +62,8 @@ h3 {
   position: relative; /* Wird benötigt, sonst funktioniert Z-Index nicht*/
 
   display: flex;
-  justify-content: center;
-
-  height: 80px;
-
-  padding: 0 16px;
+  align-items: center;
+  flex-direction: column;
 
   background-color: white;
   box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.25);
@@ -70,7 +83,10 @@ h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1200px;
+  padding: 0 16px;
+  height: 80px;
+  max-width: 1200px;
+  width: 100%;
 }
 .copyright {
   text-align: center;
@@ -122,7 +138,9 @@ main {
   justify-content: center;
   width: 100%;
   background-color: white;
+  transition: opacity 0.3s ease;
 }
+
 .mobile--scroll {
   display: flex;
   flex-direction: column;
@@ -218,7 +236,7 @@ main {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
 }
 .section {
-  scroll-margin-top: 100px; /* wird wegen dem Header benötigt */
+  scroll-margin-top: 116px; /* wird wegen dem Header benötigt */
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -319,6 +337,19 @@ main {
 .hamburger {
   display: none;
 }
+.hidden {
+  transform: translateX(30%);
+}
+.blur {
+  opacity: 20%;
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/*-------------------------------------
+                  MEDIA
+-------------------------------------*/
+
 @media (max-width: 1200px) {
   .hero--container-name {
     padding: 0 16px;
@@ -348,6 +379,30 @@ main {
     padding: 32px;
     gap: 16px;
   }
+  .hero--description {
+    width: 100%;
+  }
+
+  .mobile--navigator {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    list-style: none;
+    padding: 16px;
+  }
+  .mobile--navigator li {
+    margin: 36px 0px;
+  }
+  .mobile--navigator a {
+    display: block;
+    color: white;
+    font-size: 24px;
+  }
+  .times-map-container {
+    flex-direction: column;
+    padding-top: 16px;
+    gap: 32px;
+  }
 }
 
 @media (max-width: 600px) {
@@ -355,9 +410,6 @@ main {
     font-size: 14px;
   }
 
-  body {
-    background-color: var(--color-blue-main);
-  }
   header {
     box-shadow: none;
   }
@@ -410,11 +462,7 @@ main {
   .contact--item {
     margin: 0;
   }
-  .times-map-container {
-    flex-direction: column;
-    padding-top: 16px;
-    gap: 32px;
-  }
+
   .section {
     padding: 16px 16px;
     gap: 16px;

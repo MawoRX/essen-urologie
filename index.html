@@ -32,6 +32,19 @@
             alt=""
           />
         </div>
+        <aside class="aside">
+          <ul class="mobile--navigator">
+            <li><a class="homeButton nav" href="#">Home</a></li>
+            <li><a class="aboutUsButton nav" href="#about-us">Über Uns</a></li>
+            <li>
+              <a class="leistungenButton nav" href="#leistungen">Leistungen</a>
+            </li>
+            <li><a class="kontaktButton nav" href="#kontakt">Kontakt</a></li>
+            <li>
+              <a class="impressumButton nav" href="#impressum">Impressum</a>
+            </li>
+          </ul>
+        </aside>
       </div>
 
       <div class="header--contact">
@@ -54,7 +67,7 @@
       <div class="header--mobile"></div>
       <div class="header--mobile-shadow"></div>
     </header>
-    <main>
+    <main class="main">
       <div class="hero">
         <div class="hero--effect"></div>
         <div class="hero--container">
@@ -366,5 +379,27 @@
         </div>
       </div>
     </main>
+    <script>
+      let navigatorOut = false;
+      document
+        .querySelector(".hamburger")
+        .addEventListener("click", function () {
+          document.querySelector(".main").classList.toggle("blur");
+          navigatorOut = !navigatorOut;
+          document.querySelector(".aside").classList.toggle("hidden");
+          navigatorOut === true
+            ? (document.querySelector(".hamburger").src =
+                "assets/images/Icon/close.svg")
+            : (document.querySelector(".hamburger").src =
+                "assets/images/Icon/hamburger.svg");
+        });
+      document.querySelector(".aside").addEventListener("click", function () {
+        document.querySelector(".main").classList.toggle("blur");
+        navigatorOut = !navigatorOut;
+        document.querySelector(".aside").classList.toggle("hidden");
+        document.querySelector(".hamburger").src =
+          "assets/images/Icon/hamburger.svg";
+      });
+    </script>
   </body>
 </html>

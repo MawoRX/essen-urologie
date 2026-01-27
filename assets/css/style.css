@@ -13,13 +13,11 @@
   font-size: 18px;
   font-weight: bold;
   color: var(--color-font-default);
+  box-sizing: border-box;
 }
 html {
-  scroll-behavior: smooth;
-  overflow-x: hidden;
-}
-body{
   width: 100%;
+  scroll-behavior: smooth;
 }
 header {
   position: sticky; /* nötig damit z-index greift */
@@ -127,23 +125,26 @@ main {
   justify-content: center;
   align-items: flex-end;
   height: 600px;
-  width: 100%;
+
   background-image: url(../images/hero_background.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  width: 100%;
 }
 .hero--effect {
   position: absolute;
+
   height: 330px;
   width: 100%;
   background-image: url(../images/hero_background_frame.svg);
-  background-position: bottom center;
+  background-position: center;
+  background-size: 100% 100%;
   background-repeat: no-repeat;
-  background-size: contain;
 }
 .hero--container {
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   justify-content: flex-end;
   align-items: flex-end;
@@ -152,6 +153,8 @@ main {
 .content {
   position: relative;
   z-index: 1;
+  width: 100%;
+  max-width: 1200px;
   padding-top: 120px;
   padding-bottom: 32px;
 }
@@ -161,7 +164,9 @@ main {
   justify-content: center;
   gap: 68px;
 
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
+
   background-color: white;
 
   border-radius: 40px;
@@ -214,7 +219,13 @@ main {
 }
 .card--container {
   display: flex;
+  width: 100%;
   gap: 16px;
+}
+.card--container-image {
+  max-width: 340px;
+  width: 30%;
+  height: auto;
 }
 .text--container {
   width: 100%;
@@ -294,4 +305,67 @@ main {
 }
 .section--4 {
   padding-bottom: 16px;
+}
+
+@media (max-width: 1100px) {
+  h2 {
+    text-align: center;
+    font-size: 36px;
+  }
+  h3 {
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .card--container {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .card--container-image {
+    max-width: none;
+    width: 100%;
+  }
+  .text--container {
+    width: 100%;
+  }
+  .horizontal-align {
+    flex-direction: column;
+  }
+  .contact--item {
+    margin: 0;
+  }
+  .times-map-container {
+    flex-direction: column;
+  }
+  .section {
+    padding: 16px 32px 16px 32px;
+  }
+  .impressum--grid {
+    grid-template-columns: 130px 1fr;
+  }
+  .hero--description {
+    width: 100%;
+  }
+  .hero--name {
+    font-size: 32px;
+    align-self: flex-start;
+  }
+  .hero--container-name {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 16px;
+    justify-content: flex-end;
+  }
+  .navigation--container {
+    display: none;
+  }
+  .header--contact-container {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .hero--container img {
+    position: relative;
+    right: -200px;
+  }
 }

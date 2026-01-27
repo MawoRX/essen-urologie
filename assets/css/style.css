@@ -134,15 +134,16 @@ main {
 }
 .hero--effect {
   position: absolute;
-
-  height: 330px;
-  width: 100%;
+  height: 350px;
+  min-width: 100%;
   background-image: url(../images/hero_background_frame.svg);
-  background-position: center;
-  background-size: 100% 100%;
+  background-position: center bottom;
+
   background-repeat: no-repeat;
+  background-size: 100% 350px;
 }
 .hero--container {
+  height: 100%;
   width: 100%;
   max-width: 1200px;
   display: flex;
@@ -310,11 +311,28 @@ main {
 .hamburger {
   display: none;
 }
-
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
+  .hero--container-name {
+    padding: 0 16px;
+  }
+}
+@media (max-width: 1000px) {
   .hamburger {
     display: inline-block;
   }
+  .navigation--container {
+    display: none;
+  }
+  .hero--container-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 16px 16px;
+  }
+}
+
+@media (max-width: 600px) {
   h2 {
     text-align: center;
     font-size: 28px;
@@ -324,7 +342,9 @@ main {
     font-size: 22px;
     margin-bottom: 8px;
   }
-
+  .content {
+    padding-top: 0;
+  }
   .card--container {
     flex-direction: column;
     align-items: center;
@@ -354,21 +374,39 @@ main {
   .impressum--grid {
     grid-template-columns: 130px 1fr;
   }
+  .hero {
+    height: 360px;
+  }
+  .hero--effect {
+    height: 300px;
+    background-size: 100% 100%;
+  }
   .hero--description {
+    display: none;
     width: 100%;
+    padding: 8px;
   }
   .hero--name {
-    font-size: 32px;
-    align-self: flex-start;
-    padding: 8px;
+    background-color: rgba(69, 73, 82, 0.7);
+    color: white;
+    font-size: 24px;
+    border-radius: 10px;
+    padding: 8px 32px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px); /* Safari */
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
   }
-  .hero--description {
-    padding: 8px;
+  .hero--name p {
+    color: white;
   }
   .hero--container-name {
     display: flex;
     flex-direction: column;
-    padding: 16px 16px;
+    padding: 8px 16px;
     justify-content: flex-end;
   }
   .navigation--container {
@@ -382,9 +420,18 @@ main {
     justify-content: space-between;
     padding: 8px 0;
   }
+  .hero--container {
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 8px;
+  }
+
   .hero--container img {
     position: relative;
-    right: -200px;
+
+    height: 160%;
+    width: auto;
+    object-fit: cover;
   }
   .contact--link {
     font-size: 12px;

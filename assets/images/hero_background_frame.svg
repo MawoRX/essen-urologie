@@ -1,4 +1,12 @@
-<svg width="1921" height="331" viewBox="0 0 1921 331" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg
+  width="1921"
+  height="331"
+  viewBox="0 0 1921 331"
+  preserveAspectRatio="none"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+
 <g clip-path="url(#clip0_1_258)">
 <rect x="-14" width="1950" height="298" fill="url(#paint0_linear_1_258)"/>
 <path d="M-47 257C-47 257 123.278 230 496.766 230C870.254 230 1295.95 274.5 1961 257V318H-47V257Z" fill="#41B0E1" fill-opacity="0.6"/>

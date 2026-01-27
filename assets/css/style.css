@@ -17,6 +17,9 @@
 html {
   scroll-behavior: smooth;
 }
+body{
+  width: 100%;
+}
 header {
   position: sticky; /* nötig damit z-index greift */
   top: 0; /* Nötig, damit die top bar nicht hoch scrollt */

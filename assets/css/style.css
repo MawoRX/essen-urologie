@@ -262,6 +262,7 @@ main {
 .times {
   display: flex;
   justify-content: center;
+  align-items: center;
   background-color: var(--color-background);
   border-radius: 4px;
   padding: 8px 0;
@@ -306,15 +307,22 @@ main {
 .section--4 {
   padding-bottom: 16px;
 }
+.hamburger {
+  display: none;
+}
 
 @media (max-width: 1100px) {
+  .hamburger {
+    display: inline-block;
+  }
   h2 {
     text-align: center;
-    font-size: 36px;
+    font-size: 28px;
   }
   h3 {
     text-align: center;
-    font-size: 28px;
+    font-size: 22px;
+    margin-bottom: 8px;
   }
 
   .card--container {
@@ -327,6 +335,7 @@ main {
     width: 100%;
   }
   .text--container {
+    padding: 16px;
     width: 100%;
   }
   .horizontal-align {
@@ -339,7 +348,8 @@ main {
     flex-direction: column;
   }
   .section {
-    padding: 16px 32px 16px 32px;
+    padding: 16px 16px;
+    gap: 16px;
   }
   .impressum--grid {
     grid-template-columns: 130px 1fr;
@@ -350,6 +360,10 @@ main {
   .hero--name {
     font-size: 32px;
     align-self: flex-start;
+    padding: 8px;
+  }
+  .hero--description {
+    padding: 8px;
   }
   .hero--container-name {
     display: flex;
@@ -360,12 +374,26 @@ main {
   .navigation--container {
     display: none;
   }
+  .header--contact {
+    height: auto;
+  }
   .header--contact-container {
     width: 100%;
     justify-content: space-between;
+    padding: 8px 0;
   }
   .hero--container img {
     position: relative;
     right: -200px;
+  }
+  .contact--link {
+    font-size: 12px;
+  }
+  .about-us--p {
+    padding: 0 16px;
+  }
+  .times-container {
+    align-items: center;
+    justify-content: center;
   }
 }

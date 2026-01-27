@@ -364,6 +364,12 @@ main {
     height: 40px;
 
     border-radius: 40px 40px 0 0;
+    box-shadow: 0px -20px 0px 19px var(--color-blue-main);
+  }
+  .header--mobile-shadow {
+    height: 40px;
+    margin-top: -40px;
+    border-radius: 40px 40px 0 0;
     box-shadow: 0px -5px 5px 0px rgba(0, 0, 0, 0.25);
   }
   h2 {
@@ -419,12 +425,6 @@ main {
     border-radius: 20px 20px 0px 0px;
     box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
     margin-top: -40px;
-  }
-  .mobile--scroll {
-    overflow: scroll;
-    display: flex;
-    flex-direction: column;
-    gap: 0;
   }
   .hero {
     position: relative;

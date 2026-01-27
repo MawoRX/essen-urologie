@@ -11,6 +11,7 @@
   margin: 0;
   font-family: Heebo, sans-serif;
   font-size: 18px;
+  line-height: 1.7;
   font-weight: bold;
   color: var(--color-font-default);
   box-sizing: border-box;
@@ -45,7 +46,7 @@ aside {
   padding: 0px 36px;
   top: 80px;
   width: 100%;
-  transform: translateX(100%);
+  transform: translateX(200%);
   transition: transform 0.4s ease;
   box-shadow: -5px 0px 20px 0px rgba(0, 0, 0, 0.25);
   border-radius: 40px 0 0 40px;
@@ -223,14 +224,14 @@ main {
   margin-bottom: 16px;
 }
 .hero--description {
-  background-color: rgba(69, 73, 82, 0.7);
+  background-color: rgba(19, 58, 102, 0.8);
   color: white;
   padding: 8px 32px;
   width: 710px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px); /* Safari */
 
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgba(35, 93, 159, 0.5);
   border-radius: 16px;
 
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
@@ -252,7 +253,8 @@ main {
 .card--container-image {
   max-width: 340px;
   width: 30%;
-  height: auto;
+  object-fit: cover;
+  object-position: center;
 }
 .text--container {
   width: 100%;
@@ -269,6 +271,9 @@ main {
   width: 100%;
 }
 .timesheet {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   width: 100%;
 }
 .times-container {
@@ -298,6 +303,9 @@ main {
   list-style: none;
 }
 .map-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   width: 100%;
 }
 .map {
@@ -407,7 +415,8 @@ main {
 
 @media (max-width: 600px) {
   * {
-    font-size: 14px;
+    font-size: 16px;
+    line-height: 1.6;
   }
 
   header {
@@ -433,7 +442,6 @@ main {
     text-align: center;
     font-size: 22px;
     line-height: 1;
-    margin-bottom: 16px;
   }
   .content {
     margin-top: -180px;
@@ -465,7 +473,10 @@ main {
 
   .section {
     padding: 16px 16px;
-    gap: 16px;
+    gap: 24px;
+  }
+  .section--1 {
+    margin-top: 32px;
   }
   .impressum--grid {
     grid-template-columns: 130px 1fr;
@@ -491,7 +502,7 @@ main {
   }
   .hero--description {
     width: 100%;
-    padding: 8px;
+    padding: 8px 16px;
   }
   .hero--name {
     font-size: 24px;
@@ -508,7 +519,7 @@ main {
     flex-direction: column;
     padding: 8px 16px;
     justify-content: flex-end;
-    gap: 8px;
+    gap: 16px;
   }
   .navigation--container {
     display: none;

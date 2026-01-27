@@ -317,6 +317,12 @@ main {
   }
 }
 @media (max-width: 1000px) {
+  .header--contact-container {
+    justify-content: space-between;
+  }
+  .contact--item {
+    margin: 0;
+  }
   .hamburger {
     display: inline-block;
   }
@@ -329,6 +335,10 @@ main {
     justify-content: flex-end;
     align-items: flex-start;
     padding: 16px 16px;
+  }
+  .section {
+    padding: 32px;
+    gap: 16px;
   }
 }
 

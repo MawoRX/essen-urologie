@@ -140,7 +140,9 @@ h3 {
 }
 main {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   width: 100%;
   background-color: white;
   transition: opacity 0.3s ease;
@@ -183,6 +185,10 @@ main {
   justify-content: flex-end;
   align-items: flex-end;
   z-index: 1;
+  padding-top: 8px;
+}
+.hero--container img {
+  max-height: 100%;
 }
 .content {
   position: relative;
@@ -356,6 +362,9 @@ main {
   opacity: 20%;
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(12px);
+}
+.sticky--background {
+  display: none;
 }
 
 /*-------------------------------------
@@ -567,6 +576,15 @@ main {
     gap: 32px;
   }
 }
+.sticky--background {
+  display: block;
+  position: sticky;
+  margin-top: -100px;
+  height: 100px;
+  width: 100%;
+  background-color: white;
+}
+
 @media (max-width: 350px) {
   .contact--link {
     font-size: 12px;
